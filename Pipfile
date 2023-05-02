@@ -8,6 +8,7 @@ requests = "*"
 openai = "*"
 pydantic = "*"
 pylint = "*"
+tomlkit = "*"
 
 [dev-packages]
 pylint = "*"

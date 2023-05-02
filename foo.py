@@ -1,25 +1,26 @@
-import os
-import requests
-import aiohttp
-
+from email import message
 import openai
 
-
-# parse CONFIG_JSON into a dict
-
-# import config from config.py
-
 import src.aisandbox as aisandbox
+from pprint import pprint
 
-# .config as config
 
+def main():
+    cfg = aisandbox.config
+    messages = messages = [
+        # using this system role makes the output much worse...
+        # {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "give one erudite trivia about the byzantines, in markdown format, highlighting the key points"},
+    ]
+
+    result = openai.ChatCompletion.create(
+        model=cfg.openai.model,
+        messages=messages
+    )
+
+    pprint(result)
 
 
 if __name__ == "__main__":
-    cfg = aisandbox.config.load()
-    # cfg = aisandbox.load_config()
-    # print(requests)
-    # help(openai)
-    # print("hello world")
-    print(cfg.openai.secret)
-    # openai.api_key = os.environ["OPENAI_API_KEY"]
+    aisandbox.init()
+    main()
