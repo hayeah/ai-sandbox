@@ -3,26 +3,23 @@ import requests
 import aiohttp
 
 import openai
-import json
-
-from pydantic import BaseModel
-
-
-class OpenaiConfig(BaseModel):
-    secret: str
-
-
-class AppConfig(BaseModel):
-    openai: OpenaiConfig
 
 
 # parse CONFIG_JSON into a dict
 
-config = AppConfig.parse_raw(os.environ.get("CONFIG_JSON", "{}"))
+# import config from config.py
+
+import src.aisandbox as aisandbox
+
+# .config as config
+
+
 
 if __name__ == "__main__":
+    cfg = aisandbox.config.load()
+    # cfg = aisandbox.load_config()
     # print(requests)
     # help(openai)
     # print("hello world")
-    print(config.openai.secret)
+    print(cfg.openai.secret)
     # openai.api_key = os.environ["OPENAI_API_KEY"]
