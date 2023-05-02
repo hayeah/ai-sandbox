@@ -1,3 +1,9 @@
 {
-  "python.linting.pylintPath": "/workspaces/ai-sandbox/.venv/bin/pylint"
+  "python.pythonPath": "/home/codespace/.local/share/virtualenvs/ai-sandbox-y2vwAXL-/bin/python",
+  "python.linting.pylintPath": "/home/codespace/.local/share/virtualenvs/ai-sandbox-y2vwAXL-/bin/pylint",
+  "python.analysis.extraPaths": [
+    "/home/codespace/.local/share/virtualenvs/ai-sandbox-y2vwAXL-"
+  ],
+  "python.terminal.activateEnvironment": true,
+  "python.linting.pylintEnabled": false
 }

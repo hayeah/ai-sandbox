@@ -1,6 +1,9 @@
 import os
-# import json
+
 from pydantic import BaseModel
+
+import openai
+import pydantic
 
 
 class OpenaiConfig(BaseModel):
@@ -9,6 +12,7 @@ class OpenaiConfig(BaseModel):
 
 class AppConfig(BaseModel):
     openai: OpenaiConfig
+
 
 def load() -> AppConfig:
     return AppConfig.parse_raw(os.environ.get("CONFIG_JSON", "{}"))
