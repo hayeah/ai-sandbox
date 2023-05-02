@@ -1,0 +1,3 @@
+{
+  "python.linting.pylintPath": "/workspaces/ai-sandbox/.venv/bin/pylint"
+}
