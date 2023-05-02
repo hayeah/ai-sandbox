@@ -15,4 +15,6 @@ set CONFIG_JSON. either from CLI or env
 
 ```
 CONFIG_JSON=`cat .config.json` python foo.py
+
+CONFIG_TOML=`cat .config.toml` python foo.py
 ```
