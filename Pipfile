@@ -9,6 +9,7 @@ openai = "*"
 pydantic = "*"
 pylint = "*"
 tomlkit = "*"
+rich = "*"
 
 [dev-packages]
 pylint = "*"
